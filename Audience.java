@@ -42,4 +42,8 @@ public class Audience {
     public static String getCountOfAudiences() {
         return "There are " + count + " audiences in " + numberOfBuilding + " corpus";
     }
+
+    public int getNumberOfCabinet() {
+        return numberOfCabinet;
+    }
 }
