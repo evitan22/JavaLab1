@@ -1,8 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -16,7 +12,7 @@ public class Shedule {
     public void show() {
         System.out.println("--------------------------------------------------------");
         for(SheduleItem item : shedules) {
-            System.out.println(item.teachersName);
+            System.out.println("Lesson is " + item.subjectName + " by teacher " + item.teachersName);
         }
         System.out.println("--------------------------------------------------------");
     }
@@ -42,8 +38,11 @@ public class Shedule {
     public void showSheduleForDay(String dayName) {
         List<SheduleItem> filteredList = this.shedules.stream()
             .filter(item -> item.day.equals(dayName))
-            .collect(Collectors.toList());
+            .collect(Collectors.toList()); 
+
+            Collections.sort(filteredList, Comparator.comparingInt(p -> p.numberOfLesson));
             System.out.println("You have the next shedule for " + dayName + ":");
+
         for(SheduleItem item : filteredList) {
             System.out.println(item.subjectName + " on the " + item.numberOfLesson + " lesson.");
         }

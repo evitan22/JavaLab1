@@ -32,5 +32,10 @@ public class Main {
         mass.show();
         mass.showSheduleForDay("Tuesday");
         mass.findFreeAudience(2, "Tuesday", audiences);
+
+        Laboratory lab = new Laboratory(200, 2, 3, "Chemistry");
+        Laboratory.Board board1 = lab.new Board("white", "wood");
+        lab.setBoard(board1);
+        System.out.println(lab.bookAnAudience("teachersName", "ectName", 392));
     }
 }
