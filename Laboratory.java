@@ -26,4 +26,14 @@ public class Laboratory extends Audience{
             this.material = material;    
         }
     }
+
+    public void makeLocalClass(Laboratory instance) {
+        class DescribeLaboratory {
+            void describe() {
+                System.out.println("This laboratory is for "+  instance.specialisation);
+            }
+        }
+        DescribeLaboratory describe = new DescribeLaboratory();
+        describe.describe();
+    }
 }

@@ -37,5 +37,6 @@ public class Main {
         Laboratory.Board board1 = lab.new Board("white", "wood");
         lab.setBoard(board1);
         System.out.println(lab.bookAnAudience("teachersName", "ectName", 392));
+        lab.makeLocalClass(lab);
     }
 }
